@@ -1,4 +1,4 @@
-# DemoProfieCreation
+# DemoProfileCreation
 Project to Demo Profile creation of User 
 
 The Project is developed as per the specs for the assignment 
