@@ -1,6 +1,9 @@
 # DemoProfileCreation
 Project to Demo Profile creation of User 
 
+To Run Project - click on DemoProfileCreation xcodeproj file.
+The Project is designed in portrait mode for iPhone. Tested on SE and above.
+
 The Project is developed as per the specs for the assignment 
 1-It has Profile creation screen with the required fields
 2- It has sign in screen 
