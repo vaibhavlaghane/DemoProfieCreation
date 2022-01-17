@@ -36,6 +36,7 @@ class SignInViewController: UIViewController {
         self.name.text = userInfo.name
         self.emailLabel.text = userInfo.email
         self.website.text = userInfo.website
+        self.greetingLabel.text = "Hello,"+userInfo.name+"!"
         self.view.layer.insertSublayer(layerGradient, below: signInButton.layer)
     }
     

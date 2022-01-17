@@ -18,9 +18,15 @@ class DemoProfileCreationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testUserInfo() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let userInfo = UserInfo(name: "name", email: "email", website: "website", pswd: "pwd")
+        XCTAssertEqual(userInfo.name, "name")
+        XCTAssertEqual(userInfo.email, "email")
+        XCTAssertEqual(userInfo.website, "website")
+        XCTAssertEqual(userInfo.pswd, "pwd")
+        
     }
 
     func testPerformanceExample() throws {

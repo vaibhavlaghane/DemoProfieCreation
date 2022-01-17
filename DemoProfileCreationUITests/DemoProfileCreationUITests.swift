@@ -45,49 +45,50 @@ class DemoProfileCreationUITests: XCTestCase {
         let alert = app.alerts[" Empty Name"].scrollViews.otherElements.buttons["Ok"]
         XCTAssertNotNil(alert)
         
-        /*
-        firstNameTextField.tap()
-        
-        let submitButton = app.buttons["Submit"]
-        submitButton.tap()
-        app.alerts[" Empty Name"].scrollViews.otherElements.buttons["Ok"].tap()
-        
-        let emailAddressTextField = app.textFields["Email Address"]
-        emailAddressTextField.tap()
-        
-        let passwordTextField = app.textFields["Password"]
-        passwordTextField.tap()
-        
-        let websiteTextField = app.textFields["Website"]
-        websiteTextField.tap()
-        firstNameTextField.tap()
-        emailAddressTextField.tap()
-        emailAddressTextField.tap()
-        passwordTextField.tap()
-        passwordTextField.tap()
-        websiteTextField.tap()
-        submitButton.tap()
-        app.staticTexts["Hello, Firstname!"].tap()
-        
-        let element2 = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
-        let textView = element2.children(matching: .other).element(boundBy: 0).children(matching: .textView).element
-        textView.tap()
-        textView.tap()
-        
-        let element = element2.children(matching: .other).element(boundBy: 1)
-        element.children(matching: .staticText).matching(identifier: "w").element(boundBy: 0).tap()
-        element.children(matching: .staticText).matching(identifier: "w").element(boundBy: 1).tap()
-        element.children(matching: .staticText).matching(identifier: "w").element(boundBy: 2).tap()
-        app.buttons["Sign In"].tap()
-        app.alerts[" Success"].scrollViews.otherElements.buttons["Ok"].tap()
-        app.navigationBars["DemoProfileCreation.SignInSuccessView"].buttons["Back"].tap()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
- 
- */
     }
 
+    func testSignInScreen(){
+        let app = XCUIApplication()
+        app.launch()
+        sleep(1)
+        let firstNameTextField = app.textFields["First Name"]
+       // firstNameTextField.textFields.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+        firstNameTextField.doubleTap()
+        firstNameTextField.typeText("nameeeeeeee")
+        XCTAssertNotNil(firstNameTextField)
+        
+        let emailAddressTextField = app.textFields["Email Address"]
+        XCTAssertNotNil(emailAddressTextField)
+        sleep(1)
+        emailAddressTextField.doubleTap()
+        sleep(1)
+        emailAddressTextField.doubleTap()
+        //emailAddressTextField.typeText("email")
+        
+        let passwordTextField = app.textFields["Password"]
+        XCTAssertNotNil(passwordTextField)
+        sleep(1)
+        passwordTextField.doubleTap()
+        sleep(1)
+        passwordTextField.doubleTap()
+        passwordTextField.typeText("password")
+        
+        let websiteTextField = app.textFields["Website"]
+        XCTAssertNotNil(websiteTextField)
+        sleep(1)
+        websiteTextField.doubleTap()
+        sleep(1)
+        websiteTextField.doubleTap()
+        websiteTextField.typeText("Website")
+        
+        let submitButton = app.buttons["Submit"]
+        XCTAssertNotNil(submitButton)
+         
+        submitButton.tap()
+        sleep(1)
+        app.staticTexts["Hello, Firstname!"].tap()
+         
+    }
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
