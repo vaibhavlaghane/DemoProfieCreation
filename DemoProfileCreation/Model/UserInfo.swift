@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Struct for User info to be shared across View Controllers
 struct UserInfo{
     var name:String
     var email: String

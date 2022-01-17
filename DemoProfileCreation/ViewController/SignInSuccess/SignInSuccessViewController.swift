@@ -7,6 +7,7 @@
 
 import UIKit
 
+///Sign In Success ViewController - shows animation effect
 class SignInSuccessViewController: UIViewController {
     private let emitter = CAEmitterLayer()
     
@@ -19,6 +20,7 @@ class SignInSuccessViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         addConfetti(to: self.view.layer)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         let title = NSLocalizedString("Success", comment: "Success")
         let message = NSLocalizedString("Congratulations, your account is now registered", comment: "Message" )
@@ -33,7 +35,8 @@ class SignInSuccessViewController: UIViewController {
 }
 
 extension SignInSuccessViewController{
-    
+    /// Add confetti for animation effect
+    /// - Parameter layer: the layer to add the animation effect to 
     fileprivate func addConfetti(to layer: CALayer) {
       let images: [UIImage] = (0...5).map { UIImage(named: "confetti\($0)")! }
       let colors: [UIColor] = [.systemGreen, .systemRed, .systemBlue, .systemPink, .systemOrange, .systemPurple, .systemYellow]
@@ -60,6 +63,4 @@ extension SignInSuccessViewController{
       
       layer.addSublayer(emitter)
     }
-
-
 }

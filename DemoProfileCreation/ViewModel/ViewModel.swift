@@ -12,6 +12,7 @@ protocol ViewModelProtocol {
     func registerUser(_ user: UserInfo)
 }
 
+/// View Model[app can be extended to leverage the Backend functionality]
 class ViewModel: ViewModelProtocol{
     var  network: NetworkProtocol = Network()
     

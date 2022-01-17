@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// Utility class to implement auxiliary helper methods 
 class Utility: NSObject {
     
     /// ALert message dislay
@@ -38,7 +39,7 @@ class Utility: NSObject {
                 rootViewController = tabBarController.selectedViewController
             }
             rootViewController?.present(alert, animated: true, completion: nil)
-            }
+        }
     }
     
 

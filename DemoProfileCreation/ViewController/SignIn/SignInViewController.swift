@@ -8,9 +8,8 @@
 import UIKit
 import AVFoundation
 
-
+/// Sign In ViewController
 class SignInViewController: UIViewController {
-    
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var infoText: UITextView!
     @IBOutlet weak var website: UILabel!
@@ -44,7 +43,8 @@ class SignInViewController: UIViewController {
         createGradientLayer()
     }
     
-    func createGradientLayer() {
+    /// creates gardient layer to set the color of the button
+    private func createGradientLayer() {
         let startColor = CGColor.init(red: 1, green: 0.2, blue: 0, alpha:1)
         let endColor = CGColor.init(red: 1, green: 0.0, blue: 0.3, alpha: 1)
         layerGradient.colors = [startColor,endColor  ]
@@ -54,6 +54,8 @@ class SignInViewController: UIViewController {
         layerGradient.frame = signInButton.frame 
     }
     
+    /// set user info to be displayed on US
+    /// - Parameter userInfoData: userInfoData defined in struct UserInfo
     func setUserInfo(_ userInfoData: UserInfo){
         userInfo = userInfoData
     }

@@ -7,8 +7,8 @@
 
 import UIKit
 
+/// Profile creation view controller 
 class ProfileCreationViewController: UIViewController {
-    
     @IBOutlet weak var profileCreationLabel: UILabel!
     @IBOutlet weak var formDataInfoTextView: UITextView!
     @IBOutlet weak var firstNameText: UITextField!
@@ -29,8 +29,8 @@ class ProfileCreationViewController: UIViewController {
         }
     }
     
-    let layerGradient = CAGradientLayer()
-    var   gradientLayer = CAGradientLayer()
+    private let layerGradient = CAGradientLayer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         websiteField.delegate = self
@@ -44,7 +44,8 @@ class ProfileCreationViewController: UIViewController {
         createGradientLayer()
     }
     
-    func createGradientLayer() {
+    ///creates gardient layer to set the color of the button
+    private func createGradientLayer() {
         let startColor = CGColor.init(red: 1, green: 0.2, blue: 0, alpha:1)
         let endColor = CGColor.init(red: 1, green: 0.0, blue: 0.3, alpha: 1)
         layerGradient.colors = [startColor,endColor  ]
@@ -56,7 +57,9 @@ class ProfileCreationViewController: UIViewController {
 }
 
 extension ProfileCreationViewController{
-    
+    /// Validate that data is not nil or empty else show relevant message
+    /// - Parameter userInfo: userInfo data
+    /// - Returns: true or false
     fileprivate  func validateData(_ userInfo: UserInfo)->Bool {
         if(userInfo.name.count == 0 ){
             let title = NSLocalizedString("Empty Name", comment: "Emtpy Data")
@@ -93,6 +96,8 @@ extension ProfileCreationViewController{
         return true
     }
     
+    /// Get user data from the UI fields
+    /// - Returns: UserInfo
     fileprivate func getUserData()->UserInfo? {
         guard let name = firstNameText.text, let email = emailAddressField.text, let website = websiteField.text,let passwd = passwordField.text else{
             let title = NSLocalizedString("Empty Data", comment: "Emtpy Data")
@@ -119,5 +124,4 @@ extension ProfileCreationViewController: UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
-    
 }
